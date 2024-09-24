@@ -57,3 +57,7 @@ The `accesspermissions` collection defines the access permissions associated wit
 - `accesstimes` is an array of objects with structure `{day, starttime, endtime}` such that
   - `day` represents a day of the week
   - `starttime` and `endtime` represent the range during which users of this `type` can access the SUN Lab for this particular `day`
+
+## Visual demonstration
+
+[Link to video](https://drive.google.com/file/d/15_hTfdJ9Fwwqxa_m7csmEYUmABG1oTSq/view?usp=sharing)
