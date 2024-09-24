@@ -10,7 +10,7 @@ function Login() {
           </label>
         </div>
         <div className="col-auto">
-          <input type="number" className="form-control form-control-lg" id="id" placeholder="1234" />
+          <input type="number" className="form-control form-control-lg" id="id" placeholder="12345" />
         </div>
         <div className="col-auto">
           <button type="submit" className="btn btn-lg btn-primary">

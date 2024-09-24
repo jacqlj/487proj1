@@ -10,9 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@jlongster/sql.js": "^1.6.7",
+    "absurd-sql": "^0.0.54",
+    "better-sqlite3": "^11.3.0",
     "bootstrap": "^5.3.3",
+    "firebase": "^10.13.2",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "util.promisify": "^1.1.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
@@ -25,6 +30,11 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
     "react-router-dom": "^6.26.2",
-    "vite": "^5.4.1"
+    "vite": "^5.4.1",
+    "vite-plugin-node-polyfills": "^0.22.0",
+    "worker-loader": "^3.0.8"
+  },
+  "engines": {
+    "node": ">=8"
   }
 }
