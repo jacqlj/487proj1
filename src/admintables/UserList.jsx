@@ -81,7 +81,7 @@ function UserList(props) {
               users.map((u) => (
                 <tr key={u.id}>
                   <th scope="row">{u.id}</th>
-                  <td>{u.name}</td>
+                  <td className="text-start">{u.name}</td>
                   <td>{u.type}</td>
                   <td>{u.status}</td>
                 </tr>
