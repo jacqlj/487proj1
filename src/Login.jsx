@@ -13,7 +13,7 @@ function Login() {
           <input type="number" className="form-control form-control-lg" id="id" placeholder="12345" />
         </div>
         <div className="col-auto">
-          <button type="submit" className="btn btn-lg btn-primary">
+          <button type="button" className="btn btn-lg btn-primary">
             Confirm
           </button>
         </div>

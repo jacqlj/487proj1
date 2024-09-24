@@ -1,39 +1,40 @@
-import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 import './App.css';
 import Admin from './Admin';
 import Login from './Login';
 import ToAdmin from './nav/ToAdmin';
 import ToLogin from './nav/ToLogin';
-import getRandomName from './names';
 
 function App() {
   const firebaseConfig = {
-    apiKey: 'AIzaSyAhZXo_oakesk6xD_-z76_f54gtKEOAu_s',
-    authDomain: 'cs487proj1.firebaseapp.com',
-    projectId: 'cs487proj1',
-    storageBucket: 'cs487proj1.appspot.com',
-    messagingSenderId: '3365516872',
-    appId: '1:3365516872:web:5d389b173ccee5e4228a7d',
-    measurementId: 'G-MYELQ69QSP',
+    apiKey: 'AIzaSyB8Dsi7_0KMQuG-I51zDwyY7UWQylLH0aM',
+    authDomain: 'jxl6891cs487wpj1.firebaseapp.com',
+    projectId: 'jxl6891cs487wpj1',
+    storageBucket: 'jxl6891cs487wpj1.appspot.com',
+    messagingSenderId: '563448018929',
+    appId: '1:563448018929:web:bc611f1b949100a8b43650',
+    measurementId: 'G-3685CG9J53',
   };
 
   const firebase = initializeApp(firebaseConfig);
   const db = getFirestore(firebase);
 
-  // for (let i = 0; i < 1000; i++) {
-  //   setDoc(doc(db, 'user', Math.floor(Math.random() * 100000).toString()), {
+  // for (let i = 0; i < 5; i++) {
+  //   let id = Math.floor(Math.random() * 100000);
+  //   setDoc(doc(db, 'user', id.toString()), {
+  //     id: id,
   //     type: 'student',
   //     name: getRandomName(),
+  //     status: 'active',
   //   });
   // }
 
   const login = (
     <>
       <div className="mid">
-        <Login />
+        <Login db={db} />
       </div>
       <div className="end">
         <ToAdmin />
@@ -44,7 +45,7 @@ function App() {
   const admin = (
     <>
       <div className="mid">
-        <Admin />
+        <Admin db={db} />
       </div>
       <div className="end">
         <ToLogin />
@@ -56,7 +57,7 @@ function App() {
     <>
       <div className="window">
         <div className="head">
-          <h3 className="display-3">SUN Lab Access</h3>
+          <h3 className="display-5">SUN Lab Access</h3>
         </div>
         <BrowserRouter>
           <Routes>
