@@ -14,6 +14,7 @@ function Login(props) {
       const i = id;
       setID(null);
       const d = await getDoc(doc(props.db, 'user', '' + i));
+      // validate login
       if (!d.exists()) return setErr('Invalid ID');
       if (d.data().status !== 'active') return setErr('ID is deactivated');
       setSuccess(true);

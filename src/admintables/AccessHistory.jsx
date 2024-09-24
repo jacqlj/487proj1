@@ -24,7 +24,7 @@ function AccessHistory(props) {
           ? query(coll, whereID, whereMillisStart, whereMillisEnd, orderByTimeDesc)
           : !idFilter && dtFilterType === 'date'
           ? query(coll, whereMillisStart, whereMillisEnd, orderByTimeDesc)
-          : idFilter && dtFilterType === 'time'
+          : idFilter && dtFilterType !== 'date'
           ? query(coll, whereID, orderByTimeDesc)
           : query(coll, orderByTimeDesc);
       // - !idFilter && !dtFilterType || !idFilter && dtFilterType === 'time'
