@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import AccessHistory from './admintables/AccessHistory';
+import AccessPermissions from './admintables/AccessPermissions';
 import UserList from './admintables/UserList';
 import './Admin.css';
 
@@ -21,9 +22,24 @@ function Admin(props) {
           <button type="button" className={getBtnClassName('userlist')} onClick={() => setPane('userlist')}>
             User list
           </button>
+          <button
+            type="button"
+            className={getBtnClassName('accesspermissions')}
+            onClick={() => setPane('accesspermissions')}
+          >
+            Access permissions
+          </button>
         </div>
       </div>
-      {pane === 'accesshistory' ? <AccessHistory db={db} /> : <UserList db={db} />}
+      {pane === 'accesshistory' ? (
+        <AccessHistory db={db} />
+      ) : pane === 'userlist' ? (
+        <UserList db={db} />
+      ) : pane === 'accesspermissions' ? (
+        <AccessPermissions db={db} />
+      ) : (
+        <></>
+      )}
     </>
   );
 }

@@ -59,9 +59,9 @@ function App() {
         <div className="head">
           <h3 className="display-5">SUN Lab Access</h3>
         </div>
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Routes>
-            <Route path="/" element={login}></Route>
+            <Route index element={login}></Route>
             <Route path="/admin" element={admin}></Route>
           </Routes>
         </BrowserRouter>
