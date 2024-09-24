@@ -6,16 +6,25 @@
 }
 
 .window {
-  height: 50vh;
-  width: 50vw;
+  height: auto;
+  width: 60em;
+
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   row-gap: 2em;
+
+  padding: 5em 6em;
+  border-radius: 2em;
+
   color: #eeeeee;
   background-color: #333;
-  border-radius: 2em;
+
   filter: drop-shadow(0 0.5rem 1rem #666);
+}
+
+.end {
+  margin-top: 2em;
 }

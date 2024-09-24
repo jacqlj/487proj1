@@ -1,29 +1,46 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Login from './Login';
+import Admin from './Admin';
+import ToAdmin from './nav/ToAdmin';
+import ToLogin from './nav/ToLogin';
 
 function App() {
+  const login = (
+    <>
+      <div className="mid">
+        <Login />
+      </div>
+      <div className="end">
+        <ToAdmin />
+      </div>
+    </>
+  );
+
+  const admin = (
+    <>
+      <div className="mid">
+        <Admin />
+      </div>
+      <div className="end">
+        <ToLogin />
+      </div>
+    </>
+  );
+
   return (
     <>
       <div className="window">
-        <h3 className="display-3">SUN Lab Access</h3>
-        <form className="row align-items-center">
-          <div className="col-auto">
-            <label for="id" className="col-form-label fs-4">
-              Access ID
-            </label>
-          </div>
-          <div className="col-auto">
-            <input type="number" className="form-control form-control-lg" id="id" placeholder="1234"></input>
-          </div>
-          <div className="col-auto">
-            <button type="submit" className="btn btn-lg btn-primary">
-              Confirm
-            </button>
-          </div>
-        </form>
-        <button className="btn btn-secondary">Admin functions</button>
+        <div className="head">
+          <h3 className="display-3">SUN Lab Access</h3>
+        </div>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={login}></Route>
+            <Route path="/admin" element={admin}></Route>
+          </Routes>
+        </BrowserRouter>
       </div>
     </>
   );
